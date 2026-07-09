@@ -1,65 +1,81 @@
 # TODO 1: crea una lista de productos.
-# Luego revisa el valor de products para ver la lista de productos.
-products =
+products = ["laptop", "mouse", "teclado", "monitor", "impresora"]
 
 # TODO 2: crea una lista de precios.
-# Luego revisa el valor de prices para ver la lista de precios.
-prices =
+prices = [2500, 80, 120, 900, 1500]
 
 # TODO 3: crea una lista de productos agotados.
-# Luego revisa el valor de out_of_stock para ver los productos agotados.
-out_of_stock =
+out_of_stock = ["teclado", "impresora"]
 
 # TODO 4: crea una lista vacia para guardar productos disponibles.
-# Luego revisa el valor de available_products para ver que empieza vacia.
-available_products =
+available_products = []
 
 # TODO 5: recorre products. Si el producto esta en out_of_stock, usa continue.
 # Si esta disponible, agregalo a available_products.
-# Luego revisa el valor de available_products para ver los productos disponibles.
-
+for product in products:
+    if product in out_of_stock:
+        continue
+    available_products.append(product)
 
 # TODO 6: crea search_product con el valor "impresora".
-# Luego revisa el valor de search_product para ver el producto que se va a buscar.
-search_product =
+search_product = "impresora"
 
 # TODO 7: busca search_product dentro de products usando for...else.
 # Si lo encuentras, guarda "<producto> encontrado" en search_result y usa break.
 # Si el ciclo termina sin break, guarda "<producto> no encontrado" en search_result.
-# Luego revisa el valor de search_result para ver el resultado de la busqueda.
-search_result =
-
+search_result = ""
+for product in products:
+    if product == search_product:
+        search_result = f"{search_product} encontrado"
+        break
+else:
+    search_result = f"{search_product} no encontrado"
 
 # TODO 8: busca el primer producto con precio mayor que 1000 usando enumerate() y break.
 # Guarda el producto en first_expensive_product.
-# Luego revisa el valor de first_expensive_product para ver el primer producto caro.
-first_expensive_product =
-
+first_expensive_product = None
+for index, price in enumerate(prices):
+    if price > 1000:
+        first_expensive_product = products[index]
+        break
 
 # TODO 9: crea una lista de colores y una lista de tallas.
-# Luego revisa el valor de colors y sizes para ver las opciones disponibles.
-colors =
-sizes =
+colors = ["rojo", "azul", "negro"]
+sizes = ["S", "M", "L"]
 
 # TODO 10: crea una lista vacia para guardar variantes.
-# Luego revisa el valor de variants para ver que empieza vacia.
-variants =
+variants = []
 
 # TODO 11: usa ciclos for anidados para crear variantes con el formato "color - talla".
-# Luego revisa el valor de variants para ver todas las combinaciones.
-
+for color in colors:
+    for size in sizes:
+        variants.append(f"{color} - {size}")
 
 # TODO 12: crea una lista de clientes.
-# Luego revisa el valor de customers para ver la lista de clientes.
-customers =
+customers = ["Ana", "Luis", "María"]
 
 # TODO 13: crea una lista vacia para guardar saludos.
-# Luego revisa el valor de greetings para ver que empieza vacia.
-greetings =
+greetings = []
 
 # TODO 14: recorre customers y agrega saludos con el formato "Hola, <cliente>".
-# Luego revisa el valor de greetings para ver los saludos creados.
+for customer in customers:
+    greetings.append(f"Hola, {customer}")
 
+# TODO 15: muestra available_products.
+print(available_products)
 
-# TODO 15: recorre greetings.
-# Luego revisa el valor de greeting en cada vuelta para ver cada saludo.
+# TODO 16: muestra search_result.
+print(search_result)
+
+# TODO 17: muestra first_expensive_product.
+print(first_expensive_product)
+
+# TODO 18: muestra variants.
+print(variants)
+
+# TODO 19: muestra el titulo "Saludos:".
+print("Saludos:")
+
+# TODO 20: recorre greetings y muestra cada saludo.
+for greeting in greetings:
+    print(greeting)
